@@ -43,8 +43,6 @@ class SchoolTeacher(models.Model):
                                   'teacher_id', 'student_id',
                                   'Children', help='Select student')
     phone_numbers = fields.Char("Phone Number", help='Student PH no')
-    work_location = fields.Many2one("hr.work.location", 'Work location',
-                                    help='Enter work location')
 
     @api.onchange('standard_id')
     def _onchange_standard_id(self):
