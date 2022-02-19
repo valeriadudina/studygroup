@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_aragavaio_port_stock_manager,aragavaio.port stock_manager,model_aragavaio_port,stock.group_stock_manager,1,1,1,1
+access_aragavaio_port_stock_user,product_product_stock_user,model_aragavaio_port,stock.group_stock_user,1,0,0,0
+access_aragavaio_porttype_stock_manager,aragavaio.porttype stock_manager,model_aragavaio_porttype,stock.group_stock_manager,1,1,1,1
+access_aragavaio_porttype_stock_user,product_product_stock_user,model_aragavaio_porttype,stock.group_stock_user,1,0,0,0
+access_aragavaio_connector_stock_manager,aragavaio.connector stock_manager,model_aragavaio_connector,stock.group_stock_manager,1,1,1,1
+access_aragavaio_connector_stock_user,product_product_stock_user,model_aragavaio_connector,stock.group_stock_user,1,0,0,0
+access_aragavaio_interface_stock_manager,aragavaio.interface stock_manager,model_aragavaio_interface,stock.group_stock_manager,1,1,1,1
+access_aragavaio_interface_stock_user,product_product_stock_user,model_aragavaio_interface,stock.group_stock_user,1,0,0,0
