@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<odoo>
+    <record model="ir.ui.view" id="product_template_form_view_procurement_button_inherit">
+        <field name="name">product.template_procurement</field>
+        <field name="model">product.template</field>
+        <field name="groups_id" eval="[(4, ref('stock.group_stock_user'))]" />
+        <field name="inherit_id" ref="stock.product_template_form_view_procurement_button" />
+        <field name="arch" type="xml">
+            <field name="product_tooltip" position="after">
+                <field name="aragavaio_type" nolabel="0"/>
+            </field>
+            <xpath expr="//page[@name='inventory']" position="after">
+                <page name="device_options" string="AragavaIO device options" attrs="{'invisible':[('aragavaio_type','!=','device')]}">
+                    <group name="group_manual_url">
+                        <field name="manual_url" widget="url" string="User manual URL" nolabel="0"/>
+                    </group>
+                    <group name="group_ports" string="Ports">
+                        <field name="port_ids" widget="one2many" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="name" />
+                                <field name="direction" />
+                                <field name="type" />
+                                <field name="connector" />
+                                <field name="interface" />
+                                <field name="required" />
+                                <field name="amount" />
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+
+            <xpath expr="//page[@name='inventory']" position="after">
+                <page name="cable_options" string="AragavaIO cable options" attrs="{'invisible':[('aragavaio_type','!=','cable')]}">
+                    <group name="group_cable_length">
+                        <field name="cable_length" string="Cable length (in meters)" nolabel="0"/>
+                    </group>
+                    <group name="group_left_connector" string="Left connector">
+                        <field name="left_connector_type" string="Type" />
+                        <field name="left_connector_connector" string="Connector" />
+                    </group>
+                    <group name="group_right_connector" string="Right connector">
+                        <field name="right_connector_type" string="Type" />
+                        <field name="right_connector_connector" string="Connector" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
+
+
+    <record model="ir.actions.act_url" id="action_export_to_aragavaio">
+        <field name="name">Export to aragava.io</field>
+        <field name="url">aragavaio/redirect</field>
+    </record>
+
+
+    <menuitem id="menu_export_to_aragavaio" name="Export to aragava.io" action="action_export_to_aragavaio" parent="stock.menu_stock_inventory_control" sequence="4" />
+</odoo>
