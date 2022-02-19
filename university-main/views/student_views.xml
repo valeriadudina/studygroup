@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="student_list_view">
+      <field name="name">student list</field>
+      <field name="model">university.student</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="f_name"/>
+          <field name="l_name"/>
+          <field name="gender"/>
+          <field name="identity_card"/>
+          <field name="address"/>
+          <field name="birthday"/>
+          <field name="registration_date"/>
+          <field name="email"/>
+          <field name="phone"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- explicit form view definition -->
+    <record model="ir.ui.view" id="student_form_view">
+      <field name="name">student form</field>
+      <field name="model">university.student</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="f_name"/>
+          <field name="l_name"/>
+          <field name="gender"/>
+          <field name="identity_card"/>
+          <field name="address"/>
+          <field name="birthday"/>
+          <field name="registration_date"/>
+          <field name="email"/>
+          <field name="phone"/>
+          <field name="department_id"/>
+          <field name="classroom_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="student_action_window">
+      <field name="name">student window</field>
+      <field name="res_model">university.student</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="University" id="university.menu_root" web_icon="university,static/description/icon.png"/>
+
+    <!-- menu categories -->
+    <menuitem name="Students" id="university_student_cat" parent="university.menu_root" sequence="2"/>
+
+    <!-- actions -->
+    <menuitem name="List of students" id="university_student_list" parent="university_student_cat"
+              action="student_action_window"/>
+  </data>
+</odoo>

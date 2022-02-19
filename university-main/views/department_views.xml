@@ -1,0 +1,44 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="department_list_view">
+      <field name="name">department list</field>
+      <field name="model">university.department</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="department_name"/>
+          <field name="code"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- explicit form view definition -->
+    <record model="ir.ui.view" id="department_form_view">
+      <field name="name">department form</field>
+      <field name="model">university.department</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="department_name"/>
+          <field name="code"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="department_action_window">
+      <field name="name">department window</field>
+      <field name="res_model">university.department</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="University" id="university.menu_root" web_icon="university,static/description/icon.png"/>
+
+    <!-- menu categories -->
+    <menuitem name="Departments" id="university_department_cat" parent="university.menu_root" sequence="0"/>
+
+    <!-- actions -->
+    <menuitem name="List of departments" id="university_department_list" parent="university_department_cat"
+              action="department_action_window"/>
+  </data>
+</odoo>
