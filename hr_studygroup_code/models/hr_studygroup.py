@@ -4,7 +4,7 @@
 from odoo import api, fields, models
 
 
-class Department(models.Model):
+class StudyGroup(models.Model):
     _inherit = "hr.studygroup"
     _order = "code, name"
 
