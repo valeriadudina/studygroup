@@ -9,7 +9,7 @@
     "author": "Ecosoft, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/hr",
     "depends": ["hr"],
-    "data": ["views/hr_studygroup_views.xml"],
+    "data": ["views/x_studygroup_views.xml"],
     "installable": True,
     "maintainer": ["Saran440"],
 }
